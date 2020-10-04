@@ -13,7 +13,7 @@ const VideoInfo = (props) => {
         },
         to: {
             opacity: 1,
-            marginTop: '-150px'
+            marginTop: '-300px'
             // marginLeft: '550px'
         },
         delay: 400

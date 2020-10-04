@@ -12,9 +12,9 @@ const SearchVid = (props) => {
     });
 
     const moveUp = useSpring ({
-        position: 'absolute',
-        left: '545px',
-        top: props.clickedSearch? '20px' : '300px',
+        position: 'relative',
+        // left: '33%',
+        top: props.clickedSearch? '-250%' : '0px',
         delay: 200
     });
 
