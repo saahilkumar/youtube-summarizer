@@ -14,7 +14,7 @@ const SearchVid = (props) => {
     const moveUp = useSpring ({
         position: 'relative',
         // left: '33%',
-        top: props.clickedSearch? '-250%' : '0px',
+        top: props.clickedSearch? '-275%' : '0px',
         delay: 200
     });
 
@@ -24,7 +24,7 @@ const SearchVid = (props) => {
 
     return ( 
         <div className={styles.div}>
-            <animated.h1 style={fade} className={styles.h1}>Youtube Summarizer</animated.h1>
+            <animated.h1 style={fade} className={styles.h1}>Youtube Summmarizer</animated.h1>
             <animated.form className={styles.form} style={moveUp} autoComplete="off">
                 <div>
                     <input type="url" onChange={handleChange} className={styles.input} id="searchBar" placeholder={props.inputType === "Youtube" ? "Enter youtube link..." : "Enter your text..."}/>

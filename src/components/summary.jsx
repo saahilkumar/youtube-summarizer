@@ -10,7 +10,7 @@ const Summary = (props) => {
         },
         to: {
             opacity: 1,
-            marginTop: props.inputType === 'Text' && props.version === 1 ? '-300px' : '50px'
+            marginTop: props.inputType === 'Text' && props.version === 1 ? '-300%' : '50%'
         },
         delay: props.version === 1 ? 600 : 800
     });

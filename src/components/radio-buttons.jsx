@@ -15,11 +15,11 @@ const RadioButtonGroup = (props) => {
 
     return (   
         <animated.div style={fade} className={styles.div}>      
-            <RadioGroup onChange={handleChange} horizontal>
-                <RadioButton pointColor='red' iconSize={20} iconInnerSize={10} value="Youtube">
+            <RadioGroup onChange={handleChange} value='' horizontal>
+                <RadioButton rootColor='#999999' pointColor='red' iconSize={20} iconInnerSize={10} value="Youtube">
                     Youtube
                 </RadioButton>
-                <RadioButton pointColor='red' iconSize={20} iconInnerSize={10} value="Text">
+                <RadioButton rootColor='#999999' pointColor='red' iconSize={20} iconInnerSize={10} value="Text">
                     Text
                 </RadioButton>
             </RadioGroup> 
