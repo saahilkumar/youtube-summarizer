@@ -23,7 +23,7 @@ const SearchVid = (props) => {
             <animated.h1 style={fade} className={styles.h1}>Summarizer</animated.h1>
             <animated.form className={styles.form} style={moveUp} autoComplete="off">
                 <div>
-                    <input type="url" onChange={handleChange} className={styles.input} id="searchBar" placeholder={props.inputType === "Youtube" ? "Enter youtube link..." : "Enter your text..."}/>
+                    <input onChange={handleChange} className={styles.input} id="searchBar" placeholder={props.inputType === "Youtube" ? "Enter youtube link..." : "Enter your text..."}/>
                     <button type="button" onClick={ () => props.onClickedSearch() } className={styles.button}>Search</button>
                 </div>
             </animated.form>

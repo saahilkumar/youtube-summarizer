@@ -26,35 +26,50 @@ class App extends React.Component {
   handleClickedSearch = () => {
     var xhr = new XMLHttpRequest();
     var self = this;
-    xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://131296a1812c.ngrok.io/youtubeToText?url=" + this.state.userInput, true);
-    xhr.onload = function(e) {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
+    if(this.state.inputType === "Youtube") {
+      xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://131296a1812c.ngrok.io/youtubeToText?url=" + this.state.userInput, true);
+      xhr.onload = function(e) {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
 
-                var js = JSON.parse(xhr.responseText)
-                self.setState({
-                    transcript: js.transcript,
-                    clickedSearch: true,
-                    searchedVid: self.state.userInput
-                });
+                  var js = JSON.parse(xhr.responseText)
+                  self.setState({
+                      transcript: js.transcript,
+                      clickedSearch: true,
+                      searchedVid: self.state.userInput
+                  });
 
-                self.getSentiment();
-                self.getSummary1();
-                self.getSummary2();
+                  self.getSentiment();
+                  self.getSummary1();
+                  self.getSummary2();
 
 
-                return js.transcript
-            } else {
-                console.error(xhr.statusText)
-            }
-        }
+                  return js.transcript
+              } else {
+                  console.error(xhr.statusText)
+              }
+          }
     };
 
     xhr.onerror = function(e) {
-        console.error(xhr.statusText)
-    }
+      console.error(xhr.statusText)
+  }
 
-    xhr.send(null);
+  xhr.send(null);
+  }
+  else {
+    self.setState({
+      transcript: this.state.userInput,
+      clickedSearch: true,
+      searchedVid: self.state.userInput
+  });
+  self.getSentiment();
+  self.getSummary1();
+  self.getSummary2();
+
+  }
+
+    
 
 };
   // handleClickedSearch = () => {

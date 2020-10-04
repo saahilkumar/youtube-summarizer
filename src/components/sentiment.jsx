@@ -21,7 +21,7 @@ const Sentiment = (props) => {
     return ( 
         <animated.div style={fadeIn}>
             <h1 className={styles.h1}>Sentiment</h1>
-            <label className={styles.label}><span style={{ color: props.sentiment === 'positive'? 'green' : 'red' }}>{(100*props.value).toFixed(2) + "% " + props.sentiment.toUpperCase()}</span> <img text-align="center" width="100px" src={props.sentiment === "positive" ? smiley : frowny}></img></label>
+            <label className={styles.label}><span style={{ color: props.sentiment === 'POSITIVE'? 'green' : 'red' }}>{(100*props.value).toFixed(2) + "% " + props.sentiment.toUpperCase()}</span> <img text-align="center" width="100px" src={props.sentiment === "POSITIVE" ? smiley : frowny}></img></label>
         </animated.div>
      );
 }
