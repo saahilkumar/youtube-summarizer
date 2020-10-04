@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { RadioGroup, RadioButton } from 'react-radio-buttons'
 import { useSpring, animated } from 'react-spring';
+import styles from './radio-buttons.module.css';
 
 const RadioButtonGroup = (props) => {
 
@@ -13,7 +14,7 @@ const RadioButtonGroup = (props) => {
     }
 
     return (   
-        <animated.div style={fade}>      
+        <animated.div style={fade} className={styles.div}>      
             <RadioGroup onChange={handleChange} horizontal>
                 <RadioButton pointColor='red' iconSize={20} iconInnerSize={10} value="Youtube">
                     Youtube
