@@ -3,6 +3,10 @@ import styles from './search.module.css';
 import { useSpring, animated } from 'react-spring';
 
 const SearchVid = (props) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+
+
     const fade = useSpring ({
         opacity: props.clickedSearch? 0 : 1
     });
@@ -23,19 +27,10 @@ const SearchVid = (props) => {
             <animated.h1 style={fade} className={styles.h1}>Youtube Summarizer</animated.h1>
             <animated.form className={styles.form} style={moveUp} autoComplete="off">
                 <div>
-                    <input type="url" onChange={handleChange} className={styles.input} id="searchBar" placeholder="Enter youtube link..."/>
+                    <input type="url" onChange={handleChange} className={styles.input} id="searchBar" placeholder={props.inputType === "Youtube" ? "Enter youtube link..." : "Enter your text..."}/>
                     <button type="button" onClick={ () => props.onClickedSearch() } className={styles.button}>Search</button>
                 </div>
             </animated.form>
-
-            {/* <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                <label className="btn btn-secondary active">
-                    <input type="radio" name="options" id="option1" autocomplete="off"/> Youtube Video
-                </label>
-                <label className="btn btn-secondary">
-                    <input type="radio" name="options" id="option2" autocomplete="off" checked/> Text Input
-                </label>
-            </div> */}
         </div>
         );
 };

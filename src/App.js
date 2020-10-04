@@ -4,6 +4,7 @@ import SearchVid from './components/search';
 import Summary from './components/summary';
 import VideoInfo from './components/video';
 import Sentiment from './components/sentiment';
+import RadioButtonGroup from './components/radio-buttons';
 
 class App extends React.Component {
 
@@ -11,7 +12,8 @@ class App extends React.Component {
     clickedSearch: false,
     videoLink: "",
     summary: "",
-    searchedVid: ""
+    searchedVid: "",
+    inputType: "Youtube"
   }
 
   handleClickedSearch = () => {
@@ -22,6 +24,11 @@ class App extends React.Component {
 
   handleChange = (newVal) => {
     this.setState({ videoLink: newVal });
+  }
+
+  handleRadioButtonChange = (newVal) => {
+    console.log(newVal);
+    this.setState({ inputType: newVal })
   }
 
   getSentiment = () => {
@@ -47,14 +54,20 @@ class App extends React.Component {
           clickedSearch={this.state.clickedSearch}
           videoLink={this.state.videoLink}
           onClickedSearch={this.handleClickedSearch}
-          onChangedInput={this.handleChange}/>
+          onChangedInput={this.handleChange}
+          inputType={this.state.inputType}/>
+
+        <RadioButtonGroup
+          clickedSearch={this.state.clickedSearch}
+          onRadioButtonChange={this.handleRadioButtonChange}/>
 
         {this.state.clickedSearch && 
         <div>
-          <VideoInfo 
-            videoLink={this.state.searchedVid}/>
+          {this.state.inputType === "Youtube" && <VideoInfo 
+            videoLink={this.state.searchedVid}/>}
           <Summary 
             clickedSearch={this.state.clickedSearch}
+            inputType={this.state.inputType}
             summary={this.state.summary}
             version={1}/>
           <Summary 
