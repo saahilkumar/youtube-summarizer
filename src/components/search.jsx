@@ -3,10 +3,6 @@ import styles from './search.module.css';
 import { useSpring, animated } from 'react-spring';
 
 const SearchVid = (props) => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const toggle = () => setDropdownOpen(prevState => !prevState);
-
-
     const fade = useSpring ({
         opacity: props.clickedSearch? 0 : 1
     });
