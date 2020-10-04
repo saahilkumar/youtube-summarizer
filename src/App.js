@@ -3,6 +3,7 @@ import './App.css';
 import SearchVid from './components/search';
 import Summary from './components/summary';
 import VideoInfo from './components/video';
+import Sentiment from './components/sentiment';
 
 class App extends React.Component {
 
@@ -21,6 +22,14 @@ class App extends React.Component {
 
   handleChange = (newVal) => {
     this.setState({ videoLink: newVal });
+  }
+
+  getSentiment = () => {
+    return "positive";
+  }
+
+  calcSentiment = () => {
+    return 0.831230238123;
   }
 
   getSummary = () => {
@@ -52,6 +61,9 @@ class App extends React.Component {
             clickedSearch={this.state.clickedSearch}
             summary={this.state.summary}
             version={2}/>
+          <Sentiment 
+            sentiment={this.getSentiment()}
+            value={this.calcSentiment()}/>
           </div>}
       </main>
     );

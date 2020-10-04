@@ -27,6 +27,15 @@ const SearchVid = (props) => {
                     <button type="button" onClick={ () => props.onClickedSearch() } className={styles.button}>Search</button>
                 </div>
             </animated.form>
+
+            {/* <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                <label className="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off"/> Youtube Video
+                </label>
+                <label className="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off" checked/> Text Input
+                </label>
+            </div> */}
         </div>
         );
 };

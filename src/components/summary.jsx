@@ -17,7 +17,7 @@ const Summary = (props) => {
 
     const summaryLabel = props.version === 1 ? "One" : "Two";
     return ( 
-        <animated.div style={fadeIn} className={props.version === 1 ? "" : styles.div_two}>
+        <animated.div style={fadeIn}>
             <h1 className={styles.h1}>Summary {summaryLabel}</h1>
             <label className={styles.label}>{props.summary}</label>
         </animated.div>

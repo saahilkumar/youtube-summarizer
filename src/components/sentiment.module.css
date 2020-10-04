@@ -6,14 +6,10 @@
     margin-left: 50px;
     text-align: left;
     font-family: 'Josefin Sans', sans-serif;
-  }
-
-.vid_player {
-    display: block;
-    margin: auto;
 }
 
-.div {
-    display: inline-block;
-    margin-left: 525px;
+.label {
+    font-size: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
