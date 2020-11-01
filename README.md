@@ -5,5 +5,3 @@ Summarizer is a useful web application that was created with React.JS at IvyHack
 Summarizer uses two different artificial intelligence methods to generate two summaries of the inputted media. Both of these summaries are made available to the user to help them get a better understanding of what concepts were most important in the video or text that they submitted.
 
 Summarizer also uses AI to rate the overall sentiment of the media. This feature is especially helpful when summarizing things such as news articles, short films, or debates.
-
-**Video Demo:** https://www.google.com/
